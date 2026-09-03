@@ -1,0 +1,12 @@
+include: package:lint/strict.yaml
+
+formatter:
+  page_width: 120
+
+linter:
+  rules:
+    avoid_classes_with_only_static_members: false
+    document_ignores: false
+    non_constant_identifier_names: false
+analyzer:
+  exclude: [.dart_tool/**, build/**]
