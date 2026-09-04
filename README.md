@@ -5,6 +5,7 @@
 HTML, CSS and JavaScript minifiers written in pure Dart. One call minifies a whole page, inline
 `<style>` and `<script>` blocks included. No external dependencies, no build step, no Node toolchain.
 
+[![Build](https://img.shields.io/github/actions/workflow/status/raphrmx/web_minify/ci.yml?branch=main&label=build)](https://github.com/raphrmx/web_minify/actions/workflows/ci.yml)
 [![Pub Version](https://img.shields.io/pub/v/web_minify?color=blue)](https://pub.dev/packages/web_minify)
 ![Maintainer](https://img.shields.io/badge/Maintainer-Raphael-purple)
 [![License](https://img.shields.io/badge/Licence-MIT-blue)](/LICENSE)
