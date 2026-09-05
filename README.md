@@ -70,8 +70,8 @@ bodies are copied byte for byte.
 
 ### Options
 
-Options live on `HtmlMinifier`, which also carries the stylesheet and script minifiers used for the
-inline blocks:
+`HtmlMinifier` carries the options for all three languages: its `cssMinifier` and `jsMinifier` are
+used both for the inline blocks of a page and for a standalone stylesheet or script.
 
 ```dart
 const minifier = HtmlMinifier(
@@ -80,6 +80,36 @@ const minifier = HtmlMinifier(
 );
 final page = minify(source, minifier: minifier);
 ```
+
+#### `HtmlMinifier`
+
+| Option | Default | Effect |
+| --- | --- | --- |
+| `removeComments` | `true` | Drops `<!-- ... -->` blocks. |
+| `preserveConditionalComments` | `true` | Keeps `<!--[if ...]>` blocks even when `removeComments` is set, since browsers read them as markup. |
+| `collapseWhitespace` | `true` | Reduces every whitespace run in text to one space. Set to `false` to only strip comments and minify inline blocks. |
+| `trimInterTagWhitespace` | `true` | Removes whitespace-only text between two block-level elements. Whitespace next to an inline element always survives. |
+| `minifyInlineCss` | `true` | Runs `cssMinifier` over `<style>` bodies whose `type` is absent or `text/css`. |
+| `minifyInlineJs` | `true` | Runs `jsMinifier` over `<script>` bodies whose `type` is absent or a JavaScript type. |
+| `cssMinifier` | `CssMinifier()` | The stylesheet minifier applied to inline styles. |
+| `jsMinifier` | `JsMinifier()` | The script minifier applied to inline scripts. |
+
+`<pre>` and `<textarea>` bodies are always copied byte for byte, with no option to change that.
+
+#### `CssMinifier`
+
+| Option | Default | Effect |
+| --- | --- | --- |
+| `removeComments` | `true` | Drops `/* ... */` blocks. |
+| `preserveBangComments` | `true` | Keeps `/*! ... */` blocks even when `removeComments` is set, the usual convention for licence headers. |
+| `shortenHexColors` | `true` | Rewrites `#aabbcc` as `#abc` inside declarations. Id selectors are never touched. |
+
+#### `JsMinifier`
+
+| Option | Default | Effect |
+| --- | --- | --- |
+| `removeComments` | `true` | Drops `//` and `/* ... */` comments. |
+| `preserveBangComments` | `true` | Keeps `/*! ... */` blocks even when `removeComments` is set. |
 
 ### Serving a template
 

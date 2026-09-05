@@ -1,3 +1,8 @@
+## 1.0.1
+
+- README: every `HtmlMinifier`, `CssMinifier` and `JsMinifier` option is now documented with its
+  default.
+
 ## 1.0.0
 
 - Initial release.
