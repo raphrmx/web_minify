@@ -7,7 +7,7 @@ HTML, CSS and JavaScript minifiers written in pure Dart. One call minifies a who
 
 [![Build](https://img.shields.io/github/actions/workflow/status/raphrmx/web_minify/ci.yml?branch=main&label=build)](https://github.com/raphrmx/web_minify/actions/workflows/ci.yml)
 [![Pub Version](https://img.shields.io/pub/v/web_minify?color=blue)](https://pub.dev/packages/web_minify)
-![Maintainer](https://img.shields.io/badge/Maintainer-Raphael-purple)
+[![Maintainer](https://img.shields.io/badge/Maintainer-Raphael_Vrient-purple)](https://pub.dev/publishers/comapps.be/packages)
 [![License](https://img.shields.io/badge/Licence-MIT-blue)](/LICENSE)
 ![Maintenance](https://img.shields.io/badge/Maintained-yes-success)
 ![Null Safety](https://img.shields.io/badge/Null_Safety-passing-success)

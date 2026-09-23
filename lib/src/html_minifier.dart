@@ -274,6 +274,10 @@ class _HtmlScanner {
   /// ### Returns:
   /// `true` when the tag closed with `/>`.
   bool _writeAttributes(StringBuffer tag) {
+    // Set when the whitespace that separates a VALUELESS attribute (`required`)
+    // from the next one was consumed while peeking for `=`: it still has to be
+    // written, otherwise `required placeholder` collapses to `requiredplaceholder`.
+    var pendingSpace = false;
     while (_i < _source.length) {
       final hadSpace = _skipWhitespace();
       final c = _at(_i);
@@ -290,10 +294,17 @@ class _HtmlScanner {
       }
       if (c < 0) return false;
 
-      if (hadSpace) tag.write(' ');
+      if (hadSpace || pendingSpace) tag.write(' ');
+      pendingSpace = false;
       tag.write(_readAttributeName());
-      _skipWhitespace();
-      if (_at(_i) != kEquals) continue;
+      final spaceAfterName = _skipWhitespace();
+      if (_at(_i) != kEquals) {
+        // Valueless attribute: keep the separator we just skipped for the next
+        // attribute (the `>` / `/>` cases above end the tag with no trailing
+        // space, so this only matters when another attribute follows).
+        pendingSpace = spaceAfterName;
+        continue;
+      }
 
       tag.write('=');
       _i++;

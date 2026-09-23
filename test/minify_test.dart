@@ -33,6 +33,23 @@ const String _page = '''
 const String _expectedScript =
     "<script>const target=document.getElementById('bearer');target.addEventListener('click',()=>{navigator.clipboard.writeText(target.textContent);});</script>";
 
+/// A page whose inline script carries regex literals with escaped slashes (the
+/// PaperSock path-trimming pattern) alongside a real division, plus loose CSS.
+const String _regexPage = r'''
+<!DOCTYPE html>
+<html>
+<head><style>  .a { color : red ; }  </style></head>
+<body>
+  <script>
+    (function () {
+      var base = location.pathname.replace(/\/(claim|email)$/, '');
+      var path = location.pathname.replace(/\/+$/, '');
+      var n = a / b / c;
+    })();
+  </script>
+</body>
+</html>''';
+
 void main() {
   group('minify', () {
     test('handles a whole page, inline style and script included', () {
@@ -44,6 +61,19 @@ void main() {
       expect(result, contains('<p>Hello <b>world</b></p>'));
       expect(result, isNot(contains('/* tokens */')));
       expect(result, isNot(contains('// copy helper')));
+    });
+
+    test('preserves regex literals with escaped slashes in inline scripts', () {
+      // The PaperSock e-receipt pages trim a path with a `replace(/\/.../, '')`
+      // regex. The minifier must copy the regex verbatim: dropping the leading
+      // backslash would turn `//...` into a line comment and silently break the
+      // script. It must also read `a / b / c` as division, not a regex.
+      final result = minify(_regexPage);
+
+      expect(result, contains(r"location.pathname.replace(/\/(claim|email)$/,'')"));
+      expect(result, contains(r"location.pathname.replace(/\/+$/,'')"));
+      expect(result, contains('var n=a/b/c'));
+      expect(result, contains('.a{color:red}')); // CSS is still minified
     });
 
     test('matches minifyHtml on a page', () {

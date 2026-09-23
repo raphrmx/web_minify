@@ -71,5 +71,15 @@ void main() {
     test('keeps a stray angle bracket in text', () {
       expect(minifyHtml('<p>a &lt; b < c</p>'), '<p>a &lt; b < c</p>');
     });
+
+    test('keeps the space after a valueless attribute', () {
+      // `required placeholder` must not collapse to `requiredplaceholder`.
+      expect(
+        minifyHtml('<input type="email" required placeholder="x" class="f"/>'),
+        '<input type="email" required placeholder="x" class="f"/>',
+      );
+      expect(minifyHtml('<input required>'), '<input required>');
+      expect(minifyHtml('<input  disabled   readonly  value="v" >'), '<input disabled readonly value="v">');
+    });
   });
 }

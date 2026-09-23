@@ -1,3 +1,8 @@
+## 1.0.2
+
+- `minifyHtml` keeps the space after a valueless attribute: `<input required placeholder="x">` no
+  longer collapses to `<input requiredplaceholder="x">`.
+
 ## 1.0.1
 
 - README: every `HtmlMinifier`, `CssMinifier` and `JsMinifier` option is now documented with its
