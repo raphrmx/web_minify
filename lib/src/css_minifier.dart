@@ -23,6 +23,7 @@ import 'package:web_minify/src/characters.dart';
 /// // body{color:#fff}
 /// ```
 class CssMinifier {
+  /// Creates a minifier. Every option is on unless it is turned off here.
   const CssMinifier({this.removeComments = true, this.preserveBangComments = true, this.shortenHexColors = true});
 
   /// Whether `/* ... */` blocks are dropped.

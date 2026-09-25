@@ -46,6 +46,7 @@ const Set<String> _regexPrecedingKeywords = {
 /// // const a=1;const b=a+2;
 /// ```
 class JsMinifier {
+  /// Creates a minifier. Every option is on unless it is turned off here.
   const JsMinifier({this.removeComments = true, this.preserveBangComments = true});
 
   /// Whether `//` and `/* ... */` comments are dropped.

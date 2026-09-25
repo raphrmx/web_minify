@@ -121,6 +121,8 @@ const String _declarationBoundary = '!';
 /// // <div><p>Hello</p></div>
 /// ```
 class HtmlMinifier {
+  /// Creates a minifier. Every option is on unless it is turned off here,
+  /// and inline styles and scripts go through [cssMinifier] and [jsMinifier].
   const HtmlMinifier({
     this.removeComments = true,
     this.preserveConditionalComments = true,

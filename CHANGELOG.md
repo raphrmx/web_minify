@@ -1,3 +1,8 @@
+## 1.0.3
+
+- The three minifier constructors carry a documentation comment, which was the
+  only gap left in the API reference.
+
 ## 1.0.2
 
 - `minifyHtml` keeps the space after a valueless attribute: `<input required placeholder="x">` no
