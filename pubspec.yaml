@@ -2,8 +2,8 @@ name: web_minify
 description: >-
   HTML, CSS and JavaScript minifiers in pure Dart. One call minifies a whole
   page, inline style and script blocks included, with no external dependencies.
-version: 1.0.3
-homepage: https://www.comapps.be
+version: 1.0.4
+homepage: https://comapps.web.app/web_minify/
 repository: https://github.com/raphrmx/web_minify
 issue_tracker: https://github.com/raphrmx/web_minify/issues
 

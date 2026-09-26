@@ -1,16 +1,12 @@
-<a alt="ComApps Logo" href="https://comapps.be" target="_blank" rel="noreferrer"><img src="https://www.comapps.be/wp-content/uploads/2026/09/CompleteLogoHorizontalMini.png" style="margin: 15px"></a>
-
 # Web Minify (HTML, CSS, JS)
 
 HTML, CSS and JavaScript minifiers written in pure Dart. One call minifies a whole page, inline
 `<style>` and `<script>` blocks included. No external dependencies, no build step, no Node toolchain.
 
-[![Build](https://img.shields.io/github/actions/workflow/status/raphrmx/web_minify/ci.yml?branch=main&label=build)](https://github.com/raphrmx/web_minify/actions/workflows/ci.yml)
-[![Pub Version](https://img.shields.io/pub/v/web_minify?color=blue)](https://pub.dev/packages/web_minify)
-[![Maintainer](https://img.shields.io/badge/Maintainer-Raphael_Vrient-purple)](https://pub.dev/publishers/comapps.be/packages)
-[![License](https://img.shields.io/badge/Licence-MIT-blue)](/LICENSE)
-![Maintenance](https://img.shields.io/badge/Maintained-yes-success)
-![Null Safety](https://img.shields.io/badge/Null_Safety-passing-success)
+[![Live demo](https://img.shields.io/badge/Live_demo-comapps.web.app-3c9a70)](https://comapps.web.app/web_minify/)
+[![Pub Version](https://img.shields.io/pub/v/web_minify?color=0175C2)](https://pub.dev/packages/web_minify)
+![Maintainer](https://img.shields.io/badge/Maintainer-Raphael_Vrient-733d90)
+[![Licence](https://img.shields.io/badge/Licence-MIT-8C6A3F)](LICENSE)
 ![Platforms](https://img.shields.io/badge/Platforms-Android,_iOS,_macOS,_Windows,_Linux,_Web-22375C.svg)
 
 ## Install

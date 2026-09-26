@@ -1,3 +1,7 @@
+## 1.0.4
+
+- `homepage` points at the demo, which runs the package in a browser.
+
 ## 1.0.3
 
 - The three minifier constructors carry a documentation comment, which was the
