@@ -5,6 +5,7 @@ HTML, CSS and JavaScript minifiers written in pure Dart. One call minifies a who
 
 [![Live demo](https://img.shields.io/badge/Live_demo-comapps.web.app-3c9a70)](https://comapps.web.app/web_minify/)
 [![Pub Version](https://img.shields.io/pub/v/web_minify?color=0175C2)](https://pub.dev/packages/web_minify)
+[![Build](https://img.shields.io/github/actions/workflow/status/raphrmx/web_minify/ci.yml?branch=main&label=build)](https://github.com/raphrmx/web_minify/actions/workflows/ci.yml)
 ![Maintainer](https://img.shields.io/badge/Maintainer-Raphael_Vrient-733d90)
 [![Licence](https://img.shields.io/badge/Licence-MIT-8C6A3F)](LICENSE)
 ![Platforms](https://img.shields.io/badge/Platforms-Android,_iOS,_macOS,_Windows,_Linux,_Web-22375C.svg)

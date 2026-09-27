@@ -1,5 +1,7 @@
 ## 1.0.4
 
+- The README carries its build badge again, pointed at the branch the
+  repository actually builds from.
 - `homepage` points at the demo, which runs the package in a browser.
 
 ## 1.0.3
